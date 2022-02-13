@@ -7,7 +7,8 @@ public class Electrician extends Worker {
     }
 
     public void intro() {
-      super.intro();
+    super.intro();
+    System.out.println("и я "+profession);
 
     }
   public void workAndLeave () {
