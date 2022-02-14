@@ -5,19 +5,19 @@ public class Main {
         Worker [] brigada;
         int smeta = 0;
         int min,max;
-        int noi, i, j = 0;
+        int i, j = 0;
 
         spisok = new Worker[5][3]; //разворачиваем газету обьявлений
         // заполняем список обьявлениями с именами и ставками
         for (i=0; i < spisok.length; i++) {
-           spisok[i][0] = new Worker(imena[rnd(0,6)]);
+           spisok[i][0] = new Worker(imena[rnd(0,6)]+" - подай-принеси");
            spisok[i][1] = new Electrician(imena[rnd(0,6)]);
            spisok[i][2] = new Maler(imena[rnd(0,6)]);
         }
         // Выбираем трех специалистов наугад
         brigada = new Worker[3];
         for (i=0; i < brigada.length; i++) {
-            brigada[i] = spisok[rnd(0, 5)][i];
+            brigada[i] = spisok[rnd(0, spisok.length-1)][i];
         }
 
 
@@ -26,7 +26,8 @@ public class Main {
             brigada[i].intro();
             smeta = smeta + brigada[i].getStavka();
         }
-        System.out.println("За ремонт мне придётся отслюнявить: "+ smeta);
+        System.out.println("За ремонт всего придётся отслюнявить: "+ smeta);
+
         // Делаем ремонт, выслушиваем каждого, следим за деньгами
         for (i=0; i< brigada.length; i++) {
             brigada[i].workAndLeave();

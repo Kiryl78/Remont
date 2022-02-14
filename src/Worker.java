@@ -19,7 +19,7 @@ public class Worker {
     }
 
     public void workAndLeave () {
-        System.out.println("С вас: "+stavka+"... Работаю... ");
+        System.out.println("С вас: "+stavka+"... Работа кипит... ");
     }
 
     public int getStavka() {
